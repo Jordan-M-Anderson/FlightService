@@ -1,0 +1,16 @@
+C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\FlightService.Data.csproj.AssemblyReference.cache
+C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\FlightService.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\FlightService.Data.AssemblyInfoInputs.cache
+C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\FlightService.Data.AssemblyInfo.cs
+C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\FlightService.Data.csproj.CoreCompileInputs.cache
+C:\Users\monof\source\repos\FlightService\FlightService.Data\bin\Debug\net5.0\FlightService.Data.exe
+C:\Users\monof\source\repos\FlightService\FlightService.Data\bin\Debug\net5.0\FlightService.Data.deps.json
+C:\Users\monof\source\repos\FlightService\FlightService.Data\bin\Debug\net5.0\FlightService.Data.runtimeconfig.json
+C:\Users\monof\source\repos\FlightService\FlightService.Data\bin\Debug\net5.0\FlightService.Data.runtimeconfig.dev.json
+C:\Users\monof\source\repos\FlightService\FlightService.Data\bin\Debug\net5.0\FlightService.Data.dll
+C:\Users\monof\source\repos\FlightService\FlightService.Data\bin\Debug\net5.0\ref\FlightService.Data.dll
+C:\Users\monof\source\repos\FlightService\FlightService.Data\bin\Debug\net5.0\FlightService.Data.pdb
+C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\FlightService.Data.dll
+C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\ref\FlightService.Data.dll
+C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\FlightService.Data.pdb
+C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\FlightService.Data.genruntimeconfig.cache

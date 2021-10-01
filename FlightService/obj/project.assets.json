@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\monof\\source\\repos\\FlightService\\FlightService\\FlightService\\FlightService.csproj",
+      "projectUniqueName": "C:\\Users\\monof\\source\\repos\\FlightService\\FlightService\\FlightService.csproj",
       "projectName": "FlightService",
-      "projectPath": "C:\\Users\\monof\\source\\repos\\FlightService\\FlightService\\FlightService\\FlightService.csproj",
+      "projectPath": "C:\\Users\\monof\\source\\repos\\FlightService\\FlightService\\FlightService.csproj",
       "packagesPath": "C:\\Users\\monof\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\monof\\source\\repos\\FlightService\\FlightService\\FlightService\\obj\\",
+      "outputPath": "C:\\Users\\monof\\source\\repos\\FlightService\\FlightService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -61,9 +61,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

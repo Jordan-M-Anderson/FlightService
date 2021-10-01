@@ -1,4 +1,3 @@
-C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\FlightService.Data.csproj.AssemblyReference.cache
 C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\FlightService.Data.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\FlightService.Data.AssemblyInfoInputs.cache
 C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\FlightService.Data.AssemblyInfo.cs
@@ -14,3 +13,11 @@ C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\Fl
 C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\ref\FlightService.Data.dll
 C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\FlightService.Data.pdb
 C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\FlightService.Data.genruntimeconfig.cache
+C:\Users\monof\source\repos\FlightService\FlightService.Data\bin\Debug\net5.0\System.Data.SqlClient.dll
+C:\Users\monof\source\repos\FlightService\FlightService.Data\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+C:\Users\monof\source\repos\FlightService\FlightService.Data\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+C:\Users\monof\source\repos\FlightService\FlightService.Data\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+C:\Users\monof\source\repos\FlightService\FlightService.Data\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\monof\source\repos\FlightService\FlightService.Data\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\FlightService.Data.csproj.CopyComplete
+C:\Users\monof\source\repos\FlightService\FlightService.Data\obj\Debug\net5.0\FlightService.Data.csproj.AssemblyReference.cache

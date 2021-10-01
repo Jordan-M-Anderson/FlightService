@@ -41,14 +41,23 @@ namespace FlightService.Data
 
         public Flight GetFlight(int flightNum) {
             Flight result = new Flight();
-            String query = "[dbo].[GetFlight]";
+            String query = "SELECT * FROM FLIGHTS WHERE flight_number = @flightNum";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@flightNum", flightNum);
                 try { 
-                    conn.Open(); 
+                    conn.Open();
+                    SqlDataReader dataReader = cmd.ExecuteReader();
+                    if (dataReader.Read()) {
+                        result.flightNum = Convert.ToInt32(dataReader["flight_number"]);
+                        result.arrivalDate = Convert.ToDateTime(dataReader["arrival_date"]);
+                        result.depatureDate = Convert.ToDateTime(dataReader["departure_date"]);
+                        result.startAirport = dataReader["start_airport"].ToString();
+                        result.endAirport = dataReader["end_airport"].ToString();
+                        result.capacity = Convert.ToInt32(dataReader["capacity"]);
+                    }
                 } catch (SqlException e) {
                     Console.WriteLine(e.Message); 
                 } finally { 
@@ -56,6 +65,33 @@ namespace FlightService.Data
                 }
             }
             return result;
+        }
+
+        public void AddFlight(Flight flight) {
+            int flightNum = 0;
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                String query = "[dbo].[AddFlight]";
+
+                SqlCommand cmd = new SqlCommand(query,conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@arrivalDate", flight.arrivalDate);
+                cmd.Parameters.AddWithValue("@departureDate", flight.depatureDate);
+                cmd.Parameters.AddWithValue("@startAirport", flight.startAirport);
+                cmd.Parameters.AddWithValue("@endAirport", flight.endAirport);
+                cmd.Parameters.AddWithValue("@capacity", flight.capacity);
+                cmd.Parameters.Add("@flightNum", SqlDbType.Int).Direction = ParameterDirection.Output;
+                try { 
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    flightNum = (int)cmd.Parameters["@flightNum"].Value;
+                    flight.flightNum = flightNum;
+                } catch (SqlException e) { 
+                    Console.WriteLine(e.Message); 
+                } finally {
+                    conn.Close(); 
+                }
+            }
         }
     }
 }

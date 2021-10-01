@@ -64,6 +64,7 @@ namespace FlightService.Data
                         result.job = dataReader["job"].ToString();
                         result.email = dataReader["email"].ToString();
                         result.age = Convert.ToInt32(dataReader["age"].ToString());
+                        result.flightNum = Convert.ToInt32(dataReader["flight_number"]);
                     }
 
                 }
@@ -71,7 +72,9 @@ namespace FlightService.Data
                 {
                     Console.WriteLine(e.Message);
                 }
-                finally { conn.Close(); }
+                finally { 
+                    conn.Close(); 
+                }
 
                 return result;
             }
@@ -88,13 +91,18 @@ namespace FlightService.Data
                 cmd.Parameters.AddWithValue("@job", passenger.job);
                 cmd.Parameters.AddWithValue("@age", passenger.age);
                 cmd.Parameters.AddWithValue("@email", passenger.email);
+                cmd.Parameters.AddWithValue("flightNum", passenger.flightNum);
 
                 try {
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     confirmationNum = (int)cmd.Parameters["@confirmation_num"].Value;
                     passenger.confirmationNum = confirmationNum;
-                } catch (SqlException e) { Console.WriteLine(e.Message); } finally { conn.Close(); }
+                } catch (SqlException e) {
+                    Console.WriteLine(e.Message); 
+                } finally { 
+                    conn.Close(); 
+                }
             }
         }
 

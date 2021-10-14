@@ -45,7 +45,6 @@ namespace FlightService.Data
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@flightNum", flightNum);
                 try { 
                     conn.Open();
@@ -92,6 +91,57 @@ namespace FlightService.Data
                     conn.Close(); 
                 }
             }
+        }
+
+        public void UpdateFlight(Flight flight) {
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                String query = "[dbo].[UpdateFlight]";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@arrivalDate", flight.arrivalDate);
+                cmd.Parameters.AddWithValue("@departureDate", flight.depatureDate);
+                cmd.Parameters.AddWithValue("@startAirport", flight.startAirport);
+                cmd.Parameters.AddWithValue("@endAirport", flight.endAirport);
+                cmd.Parameters.AddWithValue("@capacity", flight.capacity);
+                cmd.Parameters.AddWithValue("@flightNum", flight.flightNum);
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public void DeleteFlight(int flightNum) {
+            String query = "DELETE FROM PASSENGERS WHERE flight_number = @flightNum DELETE FROM FLIGHTS WHERE flight_number = @flightNum";
+            using (SqlConnection conn = new SqlConnection(connString))
+            { 
+                   SqlCommand cmd = new SqlCommand(query, conn);
+                   cmd.Parameters.AddWithValue("@flightNum", flightNum);
+                   try
+                   {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                   }
+                   catch (SqlException e)
+                   {
+                        Console.WriteLine(e.Message);
+                   }
+                   finally
+                   {
+                        conn.Close();
+                   }
+             }
         }
     }
 }

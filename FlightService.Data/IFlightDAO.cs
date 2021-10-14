@@ -11,5 +11,7 @@ namespace FlightService.Data
         public IEnumerable<Flight> GetFlights();
         public Flight GetFlight(int flightNum);
         public void AddFlight(Flight flight);
+        public void UpdateFlight(Flight flight);
+        public void DeleteFlight(int flightNum);
     }
 }

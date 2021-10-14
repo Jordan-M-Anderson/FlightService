@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Passenger";
+}
+@model IEnumerable<FlightService.Web.Models.PassengerViewModel>
+
+<div class="text-center bg-white">
+    <h2>View Passengers</h2>
+    <a class="navbar-brand" asp-area="" asp-controller="Passenger" asp-action="Create">Add Passenger</a>
+    <a class="navbar-brand" asp-area="" asp-controller="Passenger" asp-action="Update">Update Passenger</a>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(model => model.confirmationNum)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.flightNum)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.name)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.age)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.email)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.job)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var passenger in Model)
+            {
+                <tr>
+                    <th scope="row">@Html.DisplayFor(modelitem => passenger.confirmationNum)</th>
+                    <td>@Html.DisplayFor(modelitem => passenger.flightNum)</td>
+                    <td>@Html.DisplayFor(modelitem => passenger.name)</td>
+                    <td>@Html.DisplayFor(modelitem => passenger.age)</td>
+                    <td>@Html.DisplayFor(modelitem => passenger.email)</td>
+                    <td>@Html.DisplayFor(modelitem => passenger.job)</td>
+                    <td>@Html.ActionLink("Delete", "Delete", new { confirmationNum = passenger.confirmationNum })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

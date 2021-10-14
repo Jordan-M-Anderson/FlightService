@@ -6,8 +6,14 @@
     <title>@ViewData["Title"] - Flight Service</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+    </style>
 </head>
-<body background="https://avalontrans.com/wp-content/uploads/2014/01/Airport_seats-and-airplane-through-window-1200x800.jpg" style="background-position: center; background-repeat: no-repeat" class="bg-dark">
+<body background="https://jooinn.com/images/airport-runway-7.jpg" style="background-position: center; background-repeat: no-repeat" class="bg-dark">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -22,11 +28,19 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Flight" asp-action="Index">Flights</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown:hover" asp-area="" asp-controller="Flight" asp-action="Index">Flights</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-controller="Flight" asp-action="Create">Add Flight</a>
+                                <a class="dropdown-item" asp-controller="Flight" asp-action="Update">Update Flight</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Passenger" asp-action="Index">Passengers</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown:hover" asp-area="" asp-controller="Passenger" asp-action="Index">Passengers</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-controller="Passenger" asp-action="Create">Add Passenger</a>
+                                <a class="dropdown-item" asp-controller="Passenger" asp-action="Update">Update Passenger</a>
+                            </div>
                         </li>
                     </ul>
                 </div>

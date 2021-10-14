@@ -7,50 +7,50 @@
 @model FlightService.Web.Models.PassengerViewModel
 <div class="bg-white">
     <div class="container">
-<h1>Add</h1>
+        <h1 class="text-center">Add Passenger</h1>
+        <div>
+            <a asp-action="Index">Back to Passengers</a>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="flightNum" class="control-label"></label>
+                        <input asp-for="flightNum" class="form-control" placeholder="0000"/>
+                        <span asp-validation-for="flightNum" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="name" class="control-label"></label>
+                        <input asp-for="name" class="form-control" placeholder="Name"/>
+                        <span asp-validation-for="name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="age" class="control-label"></label>
+                        <input asp-for="age" class="form-control" placeholder="-"/>
+                        <span asp-validation-for="age" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="email" class="control-label"></label>
+                        <input asp-for="email" type="email" class="form-control" placeholder="email@company.com" />
+                        <span asp-validation-for="email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="job" class="control-label"></label>
+                        <input asp-for="job" class="form-control" placeholder="Occupation"/>
+                        <span asp-validation-for="job" class="text-danger"></span>
+                    </div>
 
-<h4>Passenger</h4>
-<hr/>
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="flightNum" class="control-label"></label>
-                <input asp-for="flightNum" class="form-control" />
-                <span asp-validation-for="flightNum" class="text-danger"></span>
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-primary" />
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="name" class="control-label"></label>
-                <input asp-for="name" class="form-control" />
-                <span asp-validation-for="name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="age" class="control-label"></label>
-                <input asp-for="age" class="form-control" />
-                <span asp-validation-for="age" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="email" class="control-label"></label>
-                <input asp-for="email" class="form-control" />
-                <span asp-validation-for="email" class="text-danger"></span>
-                <div class="form-group">
-                    <label asp-for="job" class="control-label"></label>
-                    <input asp-for="job" class="form-control" />
-                    <span asp-validation-for="job" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Submit" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
+
+
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-</div>
 </div>
 
 @section Scripts {

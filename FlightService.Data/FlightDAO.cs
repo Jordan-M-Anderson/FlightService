@@ -97,8 +97,13 @@ namespace FlightService.Data
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 String query = "[dbo].[UpdateFlight]";
-
+                String count = "SELECT COUNT(confirmation_number) AS on_board FROM dbo.PASSENGERS WHERE flight_number = @flightNum";
+                bool room = true;
+                
+                SqlCommand countCmd = new SqlCommand(count, conn);
                 SqlCommand cmd = new SqlCommand(query, conn);
+
+                countCmd.Parameters.AddWithValue("@flightNum", flight.flightNum);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@arrivalDate", flight.arrivalDate);
                 cmd.Parameters.AddWithValue("@departureDate", flight.depatureDate);
@@ -109,7 +114,19 @@ namespace FlightService.Data
                 try
                 {
                     conn.Open();
-                    cmd.ExecuteNonQuery();
+                    SqlDataReader dataReader = countCmd.ExecuteReader();
+                    if (dataReader.Read())
+                    {
+                        if (Int32.Parse(dataReader["on_board"].ToString()) >= flight.capacity)
+                        {
+                            room = false;
+                        }
+                    }
+                    conn.Close();
+                    conn.Open();
+                    if (room) {
+                        cmd.ExecuteNonQuery();
+                    }
                 }
                 catch (SqlException e)
                 {
